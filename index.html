@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>An A* Algorithm</title>
+
+        <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="http://code.jquery.com/mobile/git/jquery.mobile-git.js"></script>
+
+        <link href="http://code.jquery.com/mobile/git/jquery.mobile-git.css" rel="stylesheet"/>
+    
+        <script src="lib/tile.js"></script>
+        <script src="lib/tile-map.js"></script>
+        <script src="lib/tile-room.js" defer></script>
+
+        <script src="lib/node.js" defer></script>
+        <script src="lib/graph.js" defer></script>
+        <script src="lib/path-finder.js" defer></script>
+        <script src="lib/main.js" defer></script>
+
+        <style type="text/css">
+            #tilePopupPanel-popup {
+                right: 0 !important;
+                left: auto !important;
+            }
+            
+            #tilePopupPanel {
+                width: 480px;
+                border: 1px solid #000;
+                border-right: none;
+                background: rgba(0,0,0,.5);
+                margin: -1px 0;
+            }
+            
+            #tilePopupPanel .ui-btn {
+                margin: 2em 15px;
+            }
+            
+            .containing-element .ui-slider-switch { width: 10em }
+        </style>
+    </head>
+
+
+    <body>
+        <!-- Page 1 -->
+            <div data-role="page" id="options">
+                <div data-role="panel" id="options1" data-position="left" data-display="reveal" data-theme="a">
+
+                <h1>Simulation Options</h1>
+
+                <p>Normally, the simulation will generate a new random path every <em>n</em> seconds. Turn this off to have it stop.</p>
+                <label for="flip-1">Auto Run:</label>
+                <select name="flip-1" id="simulationSwitch" data-role="slider">
+	                <option value="off">Off</option>
+	                <option value="on">On</option>
+                </select> 
+                <br>
+                <p>By default, <em>no minimum path distance is set</em>. You can change that here. Longer paths take longer to find.</p>
+                <p>Since the tiles are picked at random, the simulation will eventually give up and produce a shorter path, if it is taking too long.</p>
+                <div id="minDistanceChanger">
+                        <label for="slider-mini">Minimum Distance:</label>
+                        <input type="range" name="slider-mini" id="minDistanceSlider" value="0" min="0" max="20" data-highlight="true" data-mini="true">
+                    </div>
+                <a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close</a>
+	        </div>
+
+
+            <div data-role="header" data-position="fixed">
+                <a href="#about" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="flip" data-icon="info" data-theme="b">About</a>
+                <h1>Let's Make a Dungeon</h1>
+	            <a href="#options1" data-icon="gear" class="ui-btn-right" >Options</a>
+            </div>
+            <div data-role="content">
+              <canvas id="canvas" width="1024px" height="768px" style="width: 100%; height: 80%"></canvas>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <p>Built with HTML5 | Author <a href="http://joshbyrom.com">Joshua Byrom</a></p>
+            </div>
+        
+            <div data-role="popup" id="about">
+                <h3>One Way to Build a Dungeon</h3>
+                <p>This is an open-source application showing one possible way to generate a dungeon procedurally.</p>
+                <p>In the following example, a series of rooms are opened up in a grid, and then hallways are generated between them.</p>
+            </div>
+        </div>
+
+        <script type="text/javascript" defer>
+            
+
+        </script>
+    </body>
+</html>
