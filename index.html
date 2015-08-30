@@ -49,18 +49,18 @@
 
                 <h1>Simulation Options</h1>
 
-                <p>Normally, the simulation will generate a new random path every <em>n</em> seconds. Turn this off to have it stop.</p>
+                <p>Normally, the simulation will generate a new dungeon every <em>n</em> seconds. Turn this off to have it stop.</p>
                 <label for="flip-1">Auto Run:</label>
                 <select name="flip-1" id="simulationSwitch" data-role="slider">
 	                <option value="off">Off</option>
 	                <option value="on">On</option>
                 </select> 
                 <br>
-                <p>By default, <em>no minimum path distance is set</em>. You can change that here. Longer paths take longer to find.</p>
-                <p>Since the tiles are picked at random, the simulation will eventually give up and produce a shorter path, if it is taking too long.</p>
-                <div id="minDistanceChanger">
-                        <label for="slider-mini">Minimum Distance:</label>
-                        <input type="range" name="slider-mini" id="minDistanceSlider" value="0" min="0" max="20" data-highlight="true" data-mini="true">
+                <p>By default, <em>the number of rooms in the dungeon are small</em>. You can change that here. More rooms means more processing time.</p>
+                <p>Since the room locations are picked at random, the simulation will eventually give up and produce a smaller dungeon, if it is unable to find spaces to place all the rooms.</p>
+                <div id="minRoomChanger">
+                        <label for="slider-mini">Number of Rooms:</label>
+                        <input type="range" name="slider-mini" id="minRoomSlider" value="0" min="5" max="20" data-highlight="true" data-mini="true">
                     </div>
                 <a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close</a>
 	        </div>
