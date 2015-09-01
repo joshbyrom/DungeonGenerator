@@ -61,7 +61,19 @@
                 <div id="minRoomChanger">
                         <label for="slider-mini">Number of Rooms:</label>
                         <input type="range" name="slider-mini" id="minRoomSlider" value="0" min="5" max="40" data-highlight="true" data-mini="true">
-                    </div>
+                </div>
+                <br>
+                <p>By default, the <em>size of each room is small</em>. Generally, you use small grid and unit sizes that you later scale in your game engine.</p>
+                <p>With larger rooms, it is likely that the simulation will not be able to fit them all in the grid, so if larger rooms are desired, a different room-placing algorithm may be needed.</p>
+                <div id="roomSizeChanger">
+                        <label for="slider-mini">Average Size of Rooms:</label>
+                        <input type="range" name="slider-mini" id="roomSizeSlider" value="5" min="5" max="12" data-highlight="true" data-mini="true">
+                </div>
+                    <p>Room size variance allows the room generator to create rooms sizes within a range of (size - variance) to (size + variance), with a minimum room size of three tiles. The smaller this value is, the more the room sizes will change.</p>
+                    <div id="roomSizeVarianceChanger">
+                        <label for="slider-mini">Size Adherence of Rooms:</label>
+                        <input type="range" name="slider-mini" id="roomSizeVarianceSlider" value="75" min="0" max="100" data-highlight="true" data-mini="true">
+                </div>
                 <a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close</a>
 	        </div>
 
